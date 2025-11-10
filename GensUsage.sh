@@ -19,7 +19,11 @@ echo "Collecting usage stats for ${target} from ${logs}"
 (( proceed=0 ))
 
 [[ -d "Raw" ]] && rm -r "Raw"
-[[ -d "Stats" ]] && rm -r "Stats"
+[[ -f "Stats/${target}-0.txt" ]] && rm "Stats/${target}-0.txt"
+[[ -f "Stats/chaos/${target}-0.txt" ]] && rm "Stats/chaos/${target}-0.txt"
+[[ -f "Stats/leads/${target}-0.txt" ]] && rm "Stats/leads/${target}-0.txt"
+[[ -f "Stats/metagame/${target}-0.txt" ]] && rm "Stats/metagame/${target}-0.txt"
+[[ -f "Stats/moveset/${target}-0.txt" ]] && rm "Stats/moveset/${target}-0.txt"
 
 echo
 echo "Running batchLogReader.py"
